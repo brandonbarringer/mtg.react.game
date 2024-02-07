@@ -1,0 +1,15 @@
+export enum Phase {
+  Untap = 'UNTAP',
+  Upkeep = 'UPKEEP',
+  Draw = 'DRAW',
+  PreCombatMain = 'PRE_COMBAT_MAIN',
+  BeginCombat = 'BEGIN_COMBAT',
+  DeclareAttackers = 'DECLARE_ATTACKERS',
+  DeclareBlockers = 'DECLARE_BLOCKERS',
+  FirstStrike = 'FIRST_STRIKE',
+  CombatDamage = 'COMBAT_DAMAGE',
+  EndCombat = 'END_COMBAT',
+  PostCombatMain = 'POST_COMBAT_MAIN',
+  End = 'END',
+  Cleanup = 'CLEANUP',
+}
