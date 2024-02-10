@@ -10,9 +10,7 @@ const deck = {
   format: Commander,
 }
 
-const playerTemplate: Player = {
-  id: createId('player'),
-  name: 'Player',
+const playerTemplate: Omit<Player, 'id'|'name'> = {
   life: 40,
   mana: DefaultMana,
   hand: [],
@@ -22,7 +20,7 @@ const playerTemplate: Player = {
   deck: deck,
 }
 
-const players = [playerTemplate, playerTemplate, playerTemplate, playerTemplate]
+const players: Player[] = [playerTemplate, playerTemplate, playerTemplate, playerTemplate]
   .map((player, index) => ({
     ...player,
     name: `Player ${index + 1}`,

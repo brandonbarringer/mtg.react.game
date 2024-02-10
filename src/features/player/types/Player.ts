@@ -1,6 +1,6 @@
 import type { Id } from '@/common/types/Id';
 import type { Counter } from '@/common/types/Counter';
-import type { Mana } from '@/common/types/Mana';
+import type { Mana } from '@/common/mana/types/Mana';
 // @ts-expect-error - Placholder file for types
 import { Card } from '@/features/card/types/Card';
 import type { Format } from '@/common/format/types/Format';

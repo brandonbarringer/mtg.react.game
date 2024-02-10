@@ -5,7 +5,7 @@ import { DefaultMana } from './common/mana';
 import React from 'react';
 
 export default function Playground() {
-  const {setPhase, ...game} = useGame();
+  const { setPhase, ...game } = useGame();
   const {
     setLife,
     setMana,
@@ -29,6 +29,7 @@ export default function Playground() {
     Phase.EndCombat,
     Phase.PostCombatMain,
     Phase.End,
+    Phase.Cleanup,
   ];
 
   const row = {
@@ -88,18 +89,19 @@ export default function Playground() {
             <h3>Mana</h3>
             {DefaultMana.map((mana) => {
               const playerMana = player.mana.find((m) => m.type === mana.type);
+              const amount = playerMana?.amount ?? 0;
               return (
                 <div key={mana.type} style={column}>
                   <h4>{mana.type}</h4>
                   <div>
-                    <button onClick={() => setMana(mana.type, playerMana.amount + 1)}>
+                    <button onClick={() => setMana(mana.type, amount + 1)}>
                       +
                     </button>
-                    <button onClick={() => setMana(mana.type, playerMana.amount - 1)}>
+                    <button onClick={() => setMana(mana.type, amount - 1)}>
                       -
                     </button>
                   </div>
-                  {playerMana.amount}
+                  {playerMana?.amount}
                 </div>
               )
             })}
